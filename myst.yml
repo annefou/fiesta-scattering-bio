@@ -1,0 +1,16 @@
+version: 1
+project:
+  title: "Scattering Transform: Plankton Classification"
+  authors:
+    - name: Anne Fouilloux
+      orcid: 0000-0002-1784-2920
+      affiliations:
+        - LifeWatch ERIC
+  github: https://github.com/annefou/fiesta-scattering-bio
+  license: MIT
+  toc:
+    - file: index.md
+    - file: 01_plankton_classification.ipynb
+
+site:
+  title: "Scattering Transform: Plankton Classification"

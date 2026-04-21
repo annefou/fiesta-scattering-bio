@@ -1,0 +1,16 @@
+# Data directory (too large ~650 MB, download from Zenodo)
+data/
+
+# Results (keep JSON metrics, ignore generated figures)
+results/*.png
+!results/*.json
+!results/.gitkeep
+
+# Python
+__pycache__/
+
+# Notebooks (generated from .py via jupytext)
+*.ipynb
+
+# Compressed archives
+*.7z

@@ -1,0 +1,71 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "version": "0.1.0",
+  "name": "FIESTA Scattering Bio",
+  "description": "Plankton classification using Cross Scattering Transform texture features (FOSCAT) applied to FlowCam microscopy images from LifeWatch Belgium, demonstrating cross-domain transfer from astrophysics to marine bioimaging.",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/annefou/fiesta-scattering-bio",
+  "dateCreated": "2026-04-14",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.11",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Anne",
+      "familyName": "Fouilloux",
+      "@id": "https://orcid.org/0000-0002-1784-2920",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "LifeWatch ERIC"
+      }
+    }
+  ],
+  "referencePublication": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Scattering transform applied to the CMB: new approach for component separation",
+      "author": [
+        { "@type": "Person", "givenName": "Jean-Marc", "familyName": "Delouis" },
+        { "@type": "Person", "givenName": "Erwan", "familyName": "Allys" },
+        { "@type": "Person", "givenName": "Emmanuel", "familyName": "Gauvrit" },
+        { "@type": "Person", "givenName": "Fran\u00e7ois", "familyName": "Boulanger" }
+      ],
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Astronomy & Astrophysics"
+      },
+      "datePublished": "2022",
+      "identifier": "https://doi.org/10.1051/0004-6361/202244566"
+    },
+    {
+      "@type": "Dataset",
+      "name": "LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea",
+      "identifier": "https://doi.org/10.5281/zenodo.10554845",
+      "datePublished": "2024"
+    }
+  ],
+  "isPartOf": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Science Live",
+      "url": "https://platform.sciencelive4all.org"
+    },
+    {
+      "@type": "Project",
+      "name": "FIESTA-OSCARS",
+      "url": "https://oscars-project.eu/"
+    }
+  ],
+  "keywords": [
+    "scattering transform",
+    "plankton classification",
+    "marine biodiversity",
+    "FlowCam",
+    "bioimaging",
+    "FOSCAT",
+    "LifeWatch",
+    "reproducible research",
+    "FAIR"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "method": "Cross Scattering Transform (FOSCAT) + Logistic Regression",
+  "original_paper": "Delouis et al. 2022, A&A 668, A122",
+  "original_paper_doi": "10.1051/0004-6361/202244566",
+  "dataset": "LifeWatch FlowCam phytoplankton (Zenodo 10.5281/zenodo.10554845)",
+  "dataset_contributor": "LifeWatch Belgium / VLIZ",
+  "n_classes": 10,
+  "classes": [
+    "Actinoptychus",
+    "Asterionella",
+    "Chaetoceros",
+    "Ditylum_brightwellii",
+    "Guinardia_flaccida",
+    "Rhizosolenia",
+    "Pseudo-nitzschia",
+    "Bellerochea",
+    "Eucampia",
+    "Zygoceros"
+  ],
+  "n_per_class": 300,
+  "image_size": 64,
+  "norient": 4,
+  "device": "cpu",
+  "scattering_time_seconds": 42.297585248947144,
+  "results": {
+    "raw_pixels": {
+      "features": 4096,
+      "accuracy": 0.44
+    },
+    "scattering": {
+      "features": 42,
+      "accuracy": 0.6122222222222222
+    },
+    "combined": {
+      "features": 4138,
+      "accuracy": 0.5066666666666667
+    }
+  },
+  "random_baseline": 0.1
+}

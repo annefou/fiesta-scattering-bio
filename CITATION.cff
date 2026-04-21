@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+title: "FIESTA Scattering Bio: Plankton Classification with Scattering Transform"
+message: >-
+  If you use this software, please cite both this repository and the
+  original method paper by Delouis et al. (2022).
+type: software
+version: "0.1.0"
+authors:
+  - given-names: Anne
+    family-names: Fouilloux
+    orcid: "https://orcid.org/0000-0002-1784-2920"
+    affiliation: LifeWatch ERIC
+repository-code: "https://github.com/annefou/fiesta-scattering-bio"
+license: MIT
+date-released: "2026-04-14"
+references:
+  - type: article
+    title: >-
+      Scattering transform applied to the CMB: new approach for
+      component separation
+    authors:
+      - given-names: Jean-Marc
+        family-names: Delouis
+      - given-names: Erwan
+        family-names: Allys
+      - given-names: Emmanuel
+        family-names: Gauvrit
+      - given-names: "Fran\u00e7ois"
+        family-names: Boulanger
+    journal: "Astronomy & Astrophysics"
+    volume: 668
+    pages: A122
+    year: 2022
+    doi: "10.1051/0004-6361/202244566"
+  - type: dataset
+    title: >-
+      LifeWatch observatory data: phytoplankton observations by
+      imaging flow cytometry (FlowCam) in the Belgian Part of the
+      North Sea
+    doi: "10.5281/zenodo.10554845"
+    year: 2024
