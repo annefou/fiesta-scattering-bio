@@ -4,7 +4,8 @@ message: >-
   If you use this software, please cite both this repository and the
   original method paper by Delouis et al. (2022).
 type: software
-version: "0.1.0"
+doi: "10.5281/zenodo.19687112"
+version: "0.1.1"
 authors:
   - given-names: Anne
     family-names: Fouilloux
