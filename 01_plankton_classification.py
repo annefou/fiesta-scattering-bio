@@ -98,12 +98,35 @@ CLASSES = [
 ]
 
 # %% [markdown]
-# ## 1. Load plankton images
+# ## 1. Download and load plankton images
 #
+# The dataset is downloaded from Zenodo on first run (~360 MB).
 # Each image is a Region of Interest (ROI) extracted from a FlowCam
 # acquisition — a single plankton organism or colony. Images vary in
 # size (55–115 px); we resize all to 64×64 for consistent feature
 # extraction.
+
+# %%
+import subprocess
+import urllib.request
+
+DATA_DIR = Path("data/images_DS")
+
+if not DATA_DIR.exists():
+    print("Downloading LifeWatch FlowCam plankton dataset from Zenodo...")
+    archive = Path("data/phytoplankton.7z")
+    archive.parent.mkdir(parents=True, exist_ok=True)
+
+    url = "https://zenodo.org/records/10554845/files/phytoplankton_images_and_datasplit.7z?download=1"
+    urllib.request.urlretrieve(url, str(archive))
+    print(f"  Downloaded: {archive.stat().st_size / 1e6:.0f} MB")
+
+    print("  Extracting...")
+    subprocess.run(["7z", "x", str(archive), f"-o{archive.parent}", "-y"],
+                   capture_output=True, check=True)
+    print(f"  Done: {sum(1 for _ in DATA_DIR.rglob('*.jpg')):,} images")
+else:
+    print(f"Data already exists: {DATA_DIR}")
 
 # %%
 print(f"Loading {N_PER_CLASS} images per class from {len(CLASSES)} species...")
