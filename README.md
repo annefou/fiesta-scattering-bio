@@ -88,7 +88,7 @@ We have submitted a fix upstream:
 Until the fix is merged and released, you can install FOSCAT from our fork:
 
 ```bash
-pip install git+https://github.com/annefou/FOSCAT.git@fix/cpu-device-fallback
+pip install git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu
 ```
 
 The fix is fully backwards compatible: on CUDA machines the behaviour is

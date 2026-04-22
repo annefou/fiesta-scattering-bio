@@ -3,12 +3,14 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
-  - numpy
-  - matplotlib
-  - scipy
-  - scikit-learn
-  - healpy
+  - numpy=2.2
+  - matplotlib=3.10
+  - scipy=1.15
+  - scikit-learn=1.6
+  - healpy=1.19
   - jupytext
-  - Pillow
+  - Pillow=11.2
   - pip:
-      - foscat
+      # CPU-patched fork of FOSCAT (upstream PR: jmdelouis/FOSCAT#40)
+      # Use 'foscat' from PyPI instead if running on a CUDA GPU machine
+      - foscat @ git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu
