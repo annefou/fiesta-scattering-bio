@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      CI: "true"
+      CI: "false"
 
     steps:
       - uses: actions/checkout@v4
