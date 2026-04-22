@@ -98,7 +98,7 @@ a fallback when CUDA is not available.
 ## FIESTA-OSCARS
 
 FIESTA (FAIR Interoperable Experimental Scattering Transform Analysis) is part
-of the [OSCARS](https://oscars-project.eu/) project, exploring reproducible
+of the [OSCARS](https://oscars-project.eu/projects/fair-image-analysis-across-sciences) project, exploring reproducible
 research workflows that bridge disciplines through shared mathematical methods.
 
 ## Author
