@@ -1,5 +1,8 @@
 # FIESTA Scattering Bio — scattering transforms complement a plankton CNN
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19687112.svg)](https://doi.org/10.5281/zenodo.19687112)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 This repository shows that the **Cross Scattering Transform** — originally
 developed for astrophysics
 ([Delouis et al. 2022](https://doi.org/10.1051/0004-6361/202244566)) — carries
@@ -136,6 +139,40 @@ The natural **Galaxy tool factoring** emerges from this landscape:
 - `scattering-stacking` — CNN + scattering meta-classifier (this repo)
 
 All three tools share the same FOSCAT core and are composable across domains.
+
+## How to cite
+
+If you use this repository, please cite it via its Zenodo DOI together
+with the CNN baseline paper (Decrop et al. 2025) and the scattering-transform
+method paper (Delouis et al. 2022).
+
+```
+Fouilloux, A. (2026). FIESTA Scattering Bio — scattering transforms
+complement a plankton CNN (v0.3.0). Zenodo.
+https://doi.org/10.5281/zenodo.19687112
+```
+
+BibTeX:
+
+```bibtex
+@software{fouilloux_fiesta_scattering_bio,
+  author    = {Fouilloux, Anne},
+  title     = {FIESTA Scattering Bio — scattering transforms complement a plankton CNN},
+  year      = {2026},
+  version   = {0.3.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19687112},
+  url       = {https://doi.org/10.5281/zenodo.19687112}
+}
+```
+
+The DOI above is the **concept DOI** — it always resolves to the latest
+release. Specific version DOIs are available on the
+[Zenodo record page](https://doi.org/10.5281/zenodo.19687112).
+
+See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata
+and the full reference list (Decrop et al. 2025, Delouis et al. 2022,
+LifeWatch dataset, pretrained model).
 
 ## Credits
 
