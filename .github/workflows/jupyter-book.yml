@@ -55,7 +55,7 @@ jobs:
       - name: Execute notebook
         run: |
           jupytext --to notebook 01_plankton_classification.py
-          jupyter execute 01_plankton_classification.ipynb || echo "Notebook execution failed (data may not be available)"
+          jupyter execute --inplace 01_plankton_classification.ipynb || echo "Notebook execution failed (data may not be available)"
 
       - name: Build MyST site
         env:
