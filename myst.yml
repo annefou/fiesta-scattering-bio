@@ -10,6 +10,7 @@ project:
   license: MIT
   toc:
     - file: index.md
+    - file: 04_results_summary.ipynb
     - file: 01_scattering_features.ipynb
     - file: 02_cnn_predictions.ipynb
     - file: 03_stacking.ipynb

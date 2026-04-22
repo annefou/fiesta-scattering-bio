@@ -49,16 +49,16 @@ jobs:
             mv extract/images_DS . 2>/dev/null || true
           fi
 
-      - name: Execute step 01 (smoke)
+      - name: Execute 04_results_summary (reads committed JSON)
+        shell: micromamba-shell {0}
+        run: |
+          jupytext --to notebook 04_results_summary.py
+          jupyter execute --inplace 04_results_summary.ipynb
+
+      - name: Convert pipeline notebooks (no execution — need heavy artefacts)
         shell: micromamba-shell {0}
         run: |
           jupytext --to notebook 01_scattering_features.py
-          jupyter execute --inplace 01_scattering_features.ipynb \
-              || echo "Step 01 failed (data may not be available)"
-
-      - name: Convert remaining notebooks (no execution — requires artefacts)
-        shell: micromamba-shell {0}
-        run: |
           jupytext --to notebook 02_cnn_predictions.py
           jupytext --to notebook 03_stacking.py
 
