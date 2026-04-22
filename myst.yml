@@ -14,3 +14,4 @@ project:
 
 site:
   title: "Scattering Transform: Plankton Classification"
+  base_url: /fiesta-scattering-bio
