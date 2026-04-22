@@ -34,6 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install "foscat @ git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu" scikit-learn numpy matplotlib Pillow healpy scipy jupytext nbclient ipykernel
 
       - name: Install MyST
