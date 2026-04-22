@@ -1,16 +1,34 @@
-# Data directory (too large ~650 MB, download from Zenodo)
+# Data directory (~650 MB, downloaded from Zenodo 10554845)
 data/
 
-# Results (keep JSON metrics, ignore generated figures)
+# Split files (downloaded from Zenodo 15269453 by step 01)
+splits/
+
+# Pretrained model (downloaded from Zenodo 15269453 by step 02)
+models/
+
+# Pretrained tar
+Phytoplankton_EfficientNetV2B0.tar.gz
+
+# Results: keep JSON; ignore large .npz features/predictions and figures
+results/*.npz
 results/*.png
-!results/*.json
 !results/.gitkeep
 
-# Python
+# Python / Jupyter
 __pycache__/
+*.pyc
+.ipynb_checkpoints/
 
 # Notebooks (generated from .py via jupytext)
 *.ipynb
 
 # Compressed archives
 *.7z
+*.tar.gz
+
+# MyST build output
+_build/
+
+# Optional local CNN venv
+cnn-venv/

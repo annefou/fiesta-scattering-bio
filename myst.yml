@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: "Scattering Transform: Plankton Classification"
+  title: "FIESTA Scattering Bio — scattering complements a plankton CNN"
   authors:
     - name: Anne Fouilloux
       orcid: 0000-0002-1784-2920
@@ -10,8 +10,10 @@ project:
   license: MIT
   toc:
     - file: index.md
-    - file: 01_plankton_classification.ipynb
+    - file: 01_scattering_features.ipynb
+    - file: 02_cnn_predictions.ipynb
+    - file: 03_stacking.ipynb
 
 site:
-  title: "Scattering Transform: Plankton Classification"
+  title: "FIESTA Scattering Bio"
   base_url: /fiesta-scattering-bio

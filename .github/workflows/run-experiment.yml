@@ -1,4 +1,4 @@
-name: Run experiment
+name: Run experiment (CI smoke)
 
 on:
   push:
@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+
+# CI smoke run: steps 01 and 03 only (with CI=true sub-sampling). Step 02
+# (CNN inference) needs a different TF-based environment and is validated
+# in the fiesta-decrop-reproduction repo; here we skip it and ship the
+# already-committed canonical artefact `results/stacking_val_trained_results.json`
+# for reference.
 
 jobs:
   run:
@@ -24,23 +30,23 @@ jobs:
           init-shell: bash
           cache-environment: true
 
-      - name: Download data from Zenodo
+      - name: Download dataset + splits
+        shell: micromamba-shell {0}
         run: |
-          pip install zenodo-get
           mkdir -p data
           cd data
           zenodo_get 10554845 --retry 3 || true
           if ls *.7z 1>/dev/null 2>&1; then
-            sudo apt-get install -y p7zip-full
-            7z x *.7z -odata_extract || true
-            mv data_extract/images_DS . 2>/dev/null || true
+            7z x *.7z -oextract || true
+            mv extract/images_DS . 2>/dev/null || true
           fi
 
-      - name: Convert and run notebook
+      - name: Run step 01 (scattering features, CI smoke subset)
         shell: micromamba-shell {0}
         run: |
-          jupytext --to notebook 01_plankton_classification.py
-          jupyter execute --inplace 01_plankton_classification.ipynb || echo "Notebook execution failed (data may not be available)"
+          jupytext --to notebook 01_scattering_features.py
+          jupyter execute --inplace 01_scattering_features.ipynb \
+              || echo "Step 01 failed (data may not be available)"
 
       - name: Upload results
         if: always()

@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-title: "FIESTA Scattering Bio: Plankton Classification with Scattering Transform"
+title: "FIESTA Scattering Bio — scattering transforms complement a plankton CNN"
 message: >-
-  If you use this software, please cite both this repository and the
-  original method paper by Delouis et al. (2022).
+  If you use this software, please cite this repository together with
+  Decrop et al. 2025 (CNN baseline) and Delouis et al. 2022 (scattering method).
 type: software
 doi: "10.5281/zenodo.19687112"
-version: "0.2.0"
+version: "0.3.0"
 authors:
   - given-names: Anne
     family-names: Fouilloux
@@ -14,7 +14,40 @@ authors:
 repository-code: "https://github.com/annefou/fiesta-scattering-bio"
 license: MIT
 date-released: "2026-04-22"
+keywords:
+  - scattering transform
+  - plankton classification
+  - stacked ensemble
+  - FORRT
+  - marine biodiversity
+  - FlowCam
+  - FOSCAT
+  - reproducible research
+  - FAIR
 references:
+  - type: article
+    title: >-
+      Automated image classification workflow for phytoplankton monitoring
+    authors:
+      - given-names: Wout
+        family-names: Decrop
+      - given-names: Rune
+        family-names: Lagaisse
+      - given-names: Jonas
+        family-names: Mortelmans
+      - given-names: "Cristian"
+        family-names: "Muñiz"
+      - given-names: Ignacio
+        family-names: Heredia
+      - given-names: Amanda
+        family-names: Calatrava
+      - given-names: Klaas
+        family-names: Deneudt
+    journal: "Frontiers in Marine Science"
+    volume: 12
+    pages: 1699781
+    year: 2025
+    doi: "10.3389/fmars.2025.1699781"
   - type: article
     title: >-
       Scattering transform applied to the CMB: new approach for
@@ -26,17 +59,25 @@ references:
         family-names: Allys
       - given-names: Emmanuel
         family-names: Gauvrit
-      - given-names: "Fran\u00e7ois"
+      - given-names: "François"
         family-names: Boulanger
     journal: "Astronomy & Astrophysics"
     volume: 668
     pages: A122
     year: 2022
     doi: "10.1051/0004-6361/202244566"
+  - type: software
+    title: >-
+      Phytoplankton EfficientNetV2B0 — pretrained model for FlowCam phytoplankton classification
+    authors:
+      - name: "LifeWatch Belgium / VLIZ"
+    doi: "10.5281/zenodo.15269453"
+    year: 2025
   - type: dataset
     title: >-
-      LifeWatch observatory data: phytoplankton observations by
-      imaging flow cytometry (FlowCam) in the Belgian Part of the
-      North Sea
+      LifeWatch observatory data: phytoplankton annotated training set by
+      FlowCam imaging in the Belgian Part of the North Sea
+    authors:
+      - name: "LifeWatch Belgium / VLIZ"
     doi: "10.5281/zenodo.10554845"
     year: 2024

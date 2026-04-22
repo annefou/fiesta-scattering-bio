@@ -8,14 +8,16 @@ dependencies:
   - matplotlib=3.10
   - scipy=1.15
   - scikit-learn=1.6
-  - healpy=1.19
-  - jupytext
-  - nbclient
-  - ipykernel
+  - pandas
   - Pillow=11.2
   - pytorch
   - cpuonly
+  - jupytext
+  - nbclient
+  - ipykernel
+  - p7zip
   - pip:
       # CPU-patched fork of FOSCAT (upstream PR: jmdelouis/FOSCAT#40)
-      # Use 'foscat' from PyPI instead if running on a CUDA GPU machine
+      # Use 'foscat' from PyPI instead on a CUDA GPU machine.
       - foscat @ git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu
+      - zenodo-get

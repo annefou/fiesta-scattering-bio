@@ -1,0 +1,36 @@
+# Optional secondary environment for step 02 (CNN inference).
+#
+# Step 02 uses Decrop et al.'s `planktonclas` + TensorFlow 2.19, which
+# conflicts with the FOSCAT PyTorch stack in environment.yml. Create this
+# env only if you want to run 02 in this repo rather than reusing the
+# artefacts from fiesta-decrop-reproduction.
+#
+# Usage:
+#   micromamba create -f environment-cnn.yml
+#   micromamba activate fiesta-scattering-bio-cnn
+#   python 02_cnn_predictions.py
+name: fiesta-scattering-bio-cnn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=1.26,<2.2
+  - pillow
+  - scikit-learn
+  - pandas
+  - pyyaml
+  - requests
+  - tqdm
+  - matplotlib
+  - jupytext
+  - nbclient
+  - ipykernel
+  - p7zip
+  - pip:
+      - tensorflow==2.19.0
+      - protobuf>=3.20,<6.0
+      - opencv-python>=4.5
+      - albumentations~=2.0.5
+      - planktonclas==0.2.0
+      - zenodo-get

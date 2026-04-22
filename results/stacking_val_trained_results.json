@@ -1,0 +1,583 @@
+{
+  "cnn": {
+    "top1": 0.8634260632303221,
+    "top5": 0.9870099056883563,
+    "rare_recall": 0.47697437441980656
+  },
+  "scattering": {
+    "top1": 0.26932202384483067,
+    "top5": 0.6043063052375586,
+    "rare_recall": 0.4299620661858824
+  },
+  "ens_50_50": {
+    "top1": 0.8628032504893529,
+    "top5": 0.9482472270004152,
+    "rare_recall": 0.5032958790021808
+  },
+  "stacked_val": {
+    "top1": 0.8562488878343911,
+    "top5": 0.9538821994187081,
+    "rare_recall": 0.5608056746984753
+  },
+  "oracle": {
+    "top1": 0.8768313660359452,
+    "rare_recall": 0.6455067573686654
+  },
+  "per_rare_class": {
+    "Appendicularia": {
+      "cnn": 0.6521739130434783,
+      "ens_50_50": 0.6956521739130435,
+      "stacked_val": 0.6521739130434783,
+      "oracle": 0.7391304347826086
+    },
+    "Cerataulus_granulata": {
+      "cnn": 0.6428571428571429,
+      "ens_50_50": 0.7142857142857143,
+      "stacked_val": 0.7857142857142857,
+      "oracle": 0.7142857142857143
+    },
+    "Chaetoceros_affinis": {
+      "cnn": 0.6363636363636364,
+      "ens_50_50": 0.6363636363636364,
+      "stacked_val": 0.6363636363636364,
+      "oracle": 0.9090909090909091
+    },
+    "Chaetoceros_socialis": {
+      "cnn": 0.36363636363636365,
+      "ens_50_50": 0.4090909090909091,
+      "stacked_val": 0.5909090909090909,
+      "oracle": 0.5454545454545454
+    },
+    "Cnidaria": {
+      "cnn": 0.3076923076923077,
+      "ens_50_50": 0.3076923076923077,
+      "stacked_val": 0.3076923076923077,
+      "oracle": 0.3076923076923077
+    },
+    "Coscinodiscus_concinnus": {
+      "cnn": 0.5454545454545454,
+      "ens_50_50": 0.7272727272727273,
+      "stacked_val": 0.6363636363636364,
+      "oracle": 0.9090909090909091
+    },
+    "Foraminifera": {
+      "cnn": 0.18181818181818182,
+      "ens_50_50": 0.18181818181818182,
+      "stacked_val": 0.36363636363636365,
+      "oracle": 0.6363636363636364
+    },
+    "Melosira": {
+      "cnn": 0.3076923076923077,
+      "ens_50_50": 0.3076923076923077,
+      "stacked_val": 0.3076923076923077,
+      "oracle": 0.3076923076923077
+    },
+    "Odontella_rhombus_f._trigona": {
+      "cnn": 0.5625,
+      "ens_50_50": 0.5625,
+      "stacked_val": 0.625,
+      "oracle": 0.5625
+    },
+    "Pennate_Diatom_colony": {
+      "cnn": 0.5,
+      "ens_50_50": 0.5,
+      "stacked_val": 0.55,
+      "oracle": 0.6
+    },
+    "Plagiogrammopsis+Bellerochea_malleus": {
+      "cnn": 0.4,
+      "ens_50_50": 0.4,
+      "stacked_val": 0.5,
+      "oracle": 0.5
+    },
+    "Protoperidinium_pentagonum": {
+      "cnn": 0.36363636363636365,
+      "ens_50_50": 0.36363636363636365,
+      "stacked_val": 0.5454545454545454,
+      "oracle": 0.8181818181818182
+    },
+    "Tintinnopsis": {
+      "cnn": 0.7368421052631579,
+      "ens_50_50": 0.7368421052631579,
+      "stacked_val": 0.7894736842105263,
+      "oracle": 0.8421052631578947
+    }
+  },
+  "all_classes_delta_stack_vs_cnn": {
+    "Appendicularia": {
+      "cnn": 0.6521739130434783,
+      "stacked_val": 0.6521739130434783,
+      "delta": 0.0
+    },
+    "Actinoptychus_senarius": {
+      "cnn": 0.6944444444444444,
+      "stacked_val": 0.7777777777777778,
+      "delta": 0.08333333333333337
+    },
+    "Actinoptychus": {
+      "cnn": 0.671957671957672,
+      "stacked_val": 0.6190476190476191,
+      "delta": -0.05291005291005291
+    },
+    "Bacillariophyceae_type1_colony": {
+      "cnn": 0.8709677419354839,
+      "stacked_val": 0.896774193548387,
+      "delta": 0.02580645161290318
+    },
+    "Bacillaria_paxillifer": {
+      "cnn": 0.8727735368956743,
+      "stacked_val": 0.8854961832061069,
+      "delta": 0.012722646310432628
+    },
+    "Bacteriastrum": {
+      "cnn": 0.9045092838196287,
+      "stacked_val": 0.9071618037135278,
+      "delta": 0.0026525198938991412
+    },
+    "Bacillariophyceae": {
+      "cnn": 0.5858930602957907,
+      "stacked_val": 0.5813424345847554,
+      "delta": -0.004550625711035261
+    },
+    "Aulacodiscus_argus": {
+      "cnn": 0.8378378378378378,
+      "stacked_val": 0.8378378378378378,
+      "delta": 0.0
+    },
+    "Actinoptychus_splendens": {
+      "cnn": 0.717391304347826,
+      "stacked_val": 0.782608695652174,
+      "delta": 0.0652173913043479
+    },
+    "Bellerochea_horologicalis": {
+      "cnn": 0.4305555555555556,
+      "stacked_val": 0.6527777777777778,
+      "delta": 0.2222222222222222
+    },
+    "Bellerochea": {
+      "cnn": 0.9237770193401593,
+      "stacked_val": 0.8646188850967008,
+      "delta": -0.059158134243458504
+    },
+    "Asterionella": {
+      "cnn": 0.9648910411622276,
+      "stacked_val": 0.9648910411622276,
+      "delta": 0.0
+    },
+    "Artefact": {
+      "cnn": 0.9772727272727273,
+      "stacked_val": 0.9761363636363637,
+      "delta": -0.001136363636363602
+    },
+    "Biddulphia_alternans": {
+      "cnn": 0.6176470588235294,
+      "stacked_val": 0.6470588235294118,
+      "delta": 0.02941176470588236
+    },
+    "Biddulphianae": {
+      "cnn": 0.6795454545454546,
+      "stacked_val": 0.6715909090909091,
+      "delta": -0.007954545454545436
+    },
+    "Brockmanniella_brockmannii": {
+      "cnn": 0.7857142857142857,
+      "stacked_val": 0.8214285714285714,
+      "delta": 0.0357142857142857
+    },
+    "Bubbles": {
+      "cnn": 0.9645522388059702,
+      "stacked_val": 0.9664179104477612,
+      "delta": 0.001865671641790967
+    },
+    "Centric_Diatom": {
+      "cnn": 0.8168373151308305,
+      "stacked_val": 0.78839590443686,
+      "delta": -0.028441410693970437
+    },
+    "Cerataulus_granulata": {
+      "cnn": 0.6428571428571429,
+      "stacked_val": 0.7857142857142857,
+      "delta": 0.1428571428571428
+    },
+    "Ceratium_horridum+C._longipes": {
+      "cnn": 0.72,
+      "stacked_val": 0.76,
+      "delta": 0.040000000000000036
+    },
+    "Chaetoceros": {
+      "cnn": 0.8829545454545454,
+      "stacked_val": 0.8670454545454546,
+      "delta": -0.015909090909090873
+    },
+    "Chaetoceros_affinis": {
+      "cnn": 0.6363636363636364,
+      "stacked_val": 0.6363636363636364,
+      "delta": 0.0
+    },
+    "Chaetoceros_curvisetus+C._pseudocurvisetus": {
+      "cnn": 0.9045226130653267,
+      "stacked_val": 0.9246231155778895,
+      "delta": 0.02010050251256279
+    },
+    "Chaetoceros_danicus": {
+      "cnn": 0.925,
+      "stacked_val": 0.9375,
+      "delta": 0.012499999999999956
+    },
+    "Chaetoceros_socialis": {
+      "cnn": 0.36363636363636365,
+      "stacked_val": 0.5909090909090909,
+      "delta": 0.2272727272727273
+    },
+    "Ciliophora": {
+      "cnn": 0.810126582278481,
+      "stacked_val": 0.7848101265822784,
+      "delta": -0.025316455696202556
+    },
+    "Cnidaria": {
+      "cnn": 0.3076923076923077,
+      "stacked_val": 0.3076923076923077,
+      "delta": 0.0
+    },
+    "Copepoda_adult": {
+      "cnn": 0.7,
+      "stacked_val": 0.7,
+      "delta": 0.0
+    },
+    "Coscinodiscus_concinnus": {
+      "cnn": 0.5454545454545454,
+      "stacked_val": 0.6363636363636364,
+      "delta": 0.09090909090909094
+    },
+    "Coscinodiscus_granii": {
+      "cnn": 0.8095238095238095,
+      "stacked_val": 0.8809523809523809,
+      "delta": 0.0714285714285714
+    },
+    "Crustacea": {
+      "cnn": 0.16666666666666666,
+      "stacked_val": 0.16666666666666666,
+      "delta": 0.0
+    },
+    "Crustaceae-part": {
+      "cnn": 0.7667804323094426,
+      "stacked_val": 0.7565415244596132,
+      "delta": -0.010238907849829393
+    },
+    "Dactyliosolen+Cerataulina+Guinardia": {
+      "cnn": 0.775,
+      "stacked_val": 0.8083333333333333,
+      "delta": 0.033333333333333326
+    },
+    "Detritus": {
+      "cnn": 0.658703071672355,
+      "stacked_val": 0.6450511945392492,
+      "delta": -0.013651877133105783
+    },
+    "Dinoflagellata": {
+      "cnn": 0.8181818181818182,
+      "stacked_val": 0.8181818181818182,
+      "delta": 0.0
+    },
+    "Dinoflagellate_cyst": {
+      "cnn": 0.9137931034482759,
+      "stacked_val": 0.9137931034482759,
+      "delta": 0.0
+    },
+    "Ditylum_brightwellii": {
+      "cnn": 0.95,
+      "stacked_val": 0.9488636363636364,
+      "delta": -0.001136363636363602
+    },
+    "Diploneis": {
+      "cnn": 0.9148936170212766,
+      "stacked_val": 0.9148936170212766,
+      "delta": 0.0
+    },
+    "Egg+Cyst": {
+      "cnn": 0.875995449374289,
+      "stacked_val": 0.8691695108077361,
+      "delta": -0.0068259385665528916
+    },
+    "Eucampia": {
+      "cnn": 0.9807692307692307,
+      "stacked_val": 0.9807692307692307,
+      "delta": 0.0
+    },
+    "Faecal_pellet": {
+      "cnn": 0.8695652173913043,
+      "stacked_val": 0.8792270531400966,
+      "delta": 0.009661835748792313
+    },
+    "Favella": {
+      "cnn": 0.9506172839506173,
+      "stacked_val": 0.9629629629629629,
+      "delta": 0.012345679012345623
+    },
+    "Foraminifera": {
+      "cnn": 0.18181818181818182,
+      "stacked_val": 0.36363636363636365,
+      "delta": 0.18181818181818182
+    },
+    "Leptocylindraceae": {
+      "cnn": 0.5806451612903226,
+      "stacked_val": 0.6451612903225806,
+      "delta": 0.06451612903225801
+    },
+    "Lithodesmium_undulatum": {
+      "cnn": 0.859504132231405,
+      "stacked_val": 0.8512396694214877,
+      "delta": -0.008264462809917328
+    },
+    "Hobaniella_longicruris": {
+      "cnn": 0.8846737481031867,
+      "stacked_val": 0.8922610015174507,
+      "delta": 0.007587253414264028
+    },
+    "Melosira": {
+      "cnn": 0.3076923076923077,
+      "stacked_val": 0.3076923076923077,
+      "delta": 0.0
+    },
+    "Helicotheca_tamesis": {
+      "cnn": 0.9491525423728814,
+      "stacked_val": 0.9463276836158192,
+      "delta": -0.0028248587570621764
+    },
+    "Guinardia_delicatula": {
+      "cnn": 0.9496021220159151,
+      "stacked_val": 0.9389920424403183,
+      "delta": -0.010610079575596787
+    },
+    "Guinardia_striata+Dactyliosolen_phuketensis": {
+      "cnn": 0.9114441416893733,
+      "stacked_val": 0.9059945504087193,
+      "delta": -0.00544959128065392
+    },
+    "Fibers": {
+      "cnn": 0.7568181818181818,
+      "stacked_val": 0.7465909090909091,
+      "delta": -0.010227272727272751
+    },
+    "Guinardia_flaccida": {
+      "cnn": 0.926052332195677,
+      "stacked_val": 0.9226393629124005,
+      "delta": -0.0034129692832765013
+    },
+    "Lauderia+Melosira+Detonula": {
+      "cnn": 0.95,
+      "stacked_val": 0.9477272727272728,
+      "delta": -0.002272727272727204
+    },
+    "Meuniera_membranacea": {
+      "cnn": 0.8529411764705882,
+      "stacked_val": 0.8823529411764706,
+      "delta": 0.02941176470588236
+    },
+    "Mollusca": {
+      "cnn": 0.8301886792452831,
+      "stacked_val": 0.8207547169811321,
+      "delta": -0.009433962264150941
+    },
+    "Nauplii": {
+      "cnn": 0.9200913242009132,
+      "stacked_val": 0.8744292237442922,
+      "delta": -0.045662100456621
+    },
+    "Neocalyptrella_robusta": {
+      "cnn": 0.8551401869158879,
+      "stacked_val": 0.8691588785046729,
+      "delta": 0.014018691588784993
+    },
+    "Noctiluca_scintillans": {
+      "cnn": 0.8611111111111112,
+      "stacked_val": 0.9166666666666666,
+      "delta": 0.05555555555555547
+    },
+    "Noctilucales": {
+      "cnn": 0.8786127167630058,
+      "stacked_val": 0.8265895953757225,
+      "delta": -0.052023121387283267
+    },
+    "Odontella_aurita+Ralfsiella_minima": {
+      "cnn": 0.8,
+      "stacked_val": 0.825,
+      "delta": 0.02499999999999991
+    },
+    "Odontella_rhombus_f._trigona": {
+      "cnn": 0.5625,
+      "stacked_val": 0.625,
+      "delta": 0.0625
+    },
+    "Paralia": {
+      "cnn": 0.9751908396946565,
+      "stacked_val": 0.9675572519083969,
+      "delta": -0.007633587786259555
+    },
+    "Pennate_Diatom": {
+      "cnn": 0.7861205915813424,
+      "stacked_val": 0.7838452787258248,
+      "delta": -0.0022753128555176305
+    },
+    "Pennate_Diatom_colony": {
+      "cnn": 0.5,
+      "stacked_val": 0.55,
+      "delta": 0.050000000000000044
+    },
+    "Peritrichia": {
+      "cnn": 0.6666666666666666,
+      "stacked_val": 0.7,
+      "delta": 0.033333333333333326
+    },
+    "Phytoplankton_Colony": {
+      "cnn": 0.8931818181818182,
+      "stacked_val": 0.8284090909090909,
+      "delta": -0.06477272727272732
+    },
+    "Plagiogrammopsis+Bellerochea_malleus": {
+      "cnn": 0.4,
+      "stacked_val": 0.5,
+      "delta": 0.09999999999999998
+    },
+    "Polychaeta": {
+      "cnn": 0.9230769230769231,
+      "stacked_val": 0.9230769230769231,
+      "delta": 0.0
+    },
+    "Pollen": {
+      "cnn": 0.8333333333333334,
+      "stacked_val": 0.8333333333333334,
+      "delta": 0.0
+    },
+    "Porifera_spicule": {
+      "cnn": 0.8571428571428571,
+      "stacked_val": 0.9285714285714286,
+      "delta": 0.07142857142857151
+    },
+    "Proboscia_alata": {
+      "cnn": 0.7878787878787878,
+      "stacked_val": 0.8181818181818182,
+      "delta": 0.030303030303030387
+    },
+    "Proboscia_indica": {
+      "cnn": 0.9694072657743786,
+      "stacked_val": 0.9674952198852772,
+      "delta": -0.0019120458891014325
+    },
+    "Protoperidinium": {
+      "cnn": 0.8870056497175142,
+      "stacked_val": 0.8531073446327684,
+      "delta": -0.03389830508474578
+    },
+    "Protoperidinium_pentagonum": {
+      "cnn": 0.36363636363636365,
+      "stacked_val": 0.5454545454545454,
+      "delta": 0.18181818181818177
+    },
+    "Pseudo-nitzschia": {
+      "cnn": 0.8829545454545454,
+      "stacked_val": 0.8875,
+      "delta": 0.004545454545454519
+    },
+    "Remnant": {
+      "cnn": 0.5022727272727273,
+      "stacked_val": 0.49886363636363634,
+      "delta": -0.0034090909090909727
+    },
+    "Rhizosolenia": {
+      "cnn": 0.8784090909090909,
+      "stacked_val": 0.8704545454545455,
+      "delta": -0.007954545454545436
+    },
+    "Rhizosolenia_setigera_(f._pungens)+R._hebetata_f._semispina": {
+      "cnn": 0.946590909090909,
+      "stacked_val": 0.9443181818181818,
+      "delta": -0.002272727272727204
+    },
+    "Rotifera": {
+      "cnn": 0.4411764705882353,
+      "stacked_val": 0.5294117647058824,
+      "delta": 0.08823529411764708
+    },
+    "Skeletonema": {
+      "cnn": 0.9583333333333334,
+      "stacked_val": 0.9583333333333334,
+      "delta": 0.0
+    },
+    "Stellarima_stellaris+Podosira+Hyalodiscus": {
+      "cnn": 0.8095238095238095,
+      "stacked_val": 0.8888888888888888,
+      "delta": 0.0793650793650793
+    },
+    "Stephanopyxis": {
+      "cnn": 0.956369982547993,
+      "stacked_val": 0.9546247818499127,
+      "delta": -0.0017452006980802626
+    },
+    "Suctoria": {
+      "cnn": 0.8981481481481481,
+      "stacked_val": 0.8981481481481481,
+      "delta": 0.0
+    },
+    "Synedra+Thalassionema": {
+      "cnn": 0.9875,
+      "stacked_val": 0.9875,
+      "delta": 0.0
+    },
+    "Thalassiosira+Porosira": {
+      "cnn": 0.8785425101214575,
+      "stacked_val": 0.8663967611336032,
+      "delta": -0.012145748987854255
+    },
+    "Tintinnina": {
+      "cnn": 0.5957446808510638,
+      "stacked_val": 0.5957446808510638,
+      "delta": 0.0
+    },
+    "Tintinnopsis": {
+      "cnn": 0.7368421052631579,
+      "stacked_val": 0.7894736842105263,
+      "delta": 0.052631578947368474
+    },
+    "Triceratium_favus": {
+      "cnn": 0.921875,
+      "stacked_val": 0.953125,
+      "delta": 0.03125
+    },
+    "Trieres_mobiliensis+T._regia": {
+      "cnn": 0.8709677419354839,
+      "stacked_val": 0.8768328445747801,
+      "delta": 0.0058651026392961825
+    },
+    "Trieres_sinensis": {
+      "cnn": 0.9454545454545454,
+      "stacked_val": 0.9454545454545454,
+      "delta": 0.0
+    },
+    "Tripos": {
+      "cnn": 0.7604166666666666,
+      "stacked_val": 0.7604166666666666,
+      "delta": 0.0
+    },
+    "Tripos_fusus": {
+      "cnn": 0.9826839826839827,
+      "stacked_val": 0.9754689754689755,
+      "delta": -0.00721500721500723
+    },
+    "Veliger_larvae_D-shaped": {
+      "cnn": 0.8958333333333334,
+      "stacked_val": 0.8958333333333334,
+      "delta": 0.0
+    },
+    "Zooplankton": {
+      "cnn": 0.47115384615384615,
+      "stacked_val": 0.4423076923076923,
+      "delta": -0.028846153846153855
+    },
+    "Zygoceros": {
+      "cnn": 0.9037800687285223,
+      "stacked_val": 0.8843069873997709,
+      "delta": -0.019473081328751474
+    }
+  }
+}

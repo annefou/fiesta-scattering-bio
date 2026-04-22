@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      CI: "false"
+      CI: "true"
 
     steps:
       - uses: actions/checkout@v4
@@ -38,23 +38,29 @@ jobs:
       - name: Install MyST
         run: npm install -g mystmd
 
-      - name: Download data from Zenodo
+      - name: Download dataset from Zenodo
+        shell: micromamba-shell {0}
         run: |
-          pip install zenodo-get
           mkdir -p data
           cd data
           zenodo_get 10554845 --retry 3 || true
           if ls *.7z 1>/dev/null 2>&1; then
-            sudo apt-get install -y p7zip-full
-            7z x *.7z -odata_extract || true
-            mv data_extract/images_DS . 2>/dev/null || true
+            7z x *.7z -oextract || true
+            mv extract/images_DS . 2>/dev/null || true
           fi
 
-      - name: Execute notebook
+      - name: Execute step 01 (smoke)
         shell: micromamba-shell {0}
         run: |
-          jupytext --to notebook 01_plankton_classification.py
-          jupyter execute --inplace 01_plankton_classification.ipynb || echo "Notebook execution failed (data may not be available)"
+          jupytext --to notebook 01_scattering_features.py
+          jupyter execute --inplace 01_scattering_features.ipynb \
+              || echo "Step 01 failed (data may not be available)"
+
+      - name: Convert remaining notebooks (no execution — requires artefacts)
+        shell: micromamba-shell {0}
+        run: |
+          jupytext --to notebook 02_cnn_predictions.py
+          jupytext --to notebook 03_stacking.py
 
       - name: Build MyST site
         env:

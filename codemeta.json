@@ -2,9 +2,9 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@id": "https://doi.org/10.5281/zenodo.19687112",
   "@type": "SoftwareSourceCode",
-  "version": "0.2.0",
-  "name": "FIESTA Scattering Bio",
-  "description": "Plankton classification using Cross Scattering Transform texture features (FOSCAT) applied to FlowCam microscopy images from LifeWatch Belgium, demonstrating cross-domain transfer from astrophysics to marine bioimaging.",
+  "version": "0.3.0",
+  "name": "FIESTA Scattering Bio — scattering transforms complement a plankton CNN",
+  "description": "Demonstrates that deterministic Cross Scattering Transform features (FOSCAT, NORIENT=8, RGB, 246-dim) carry information complementary to a fine-tuned ImageNet CNN on plankton classification. Runs on Decrop et al. 2025's open FlowCam dataset and held-out splits. A stacked logistic regression meta-classifier, trained on val.txt and evaluated on test.txt, improves per-class recall on 33 of 95 plankton taxa and lifts rare-class mean recall from 47.7% to 56.1% (+8.4 pp) at a cost of 0.72 pp in overall top-1 accuracy. Part of the FIESTA-OSCARS cross-domain scattering transforms demonstration.",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/annefou/fiesta-scattering-bio",
   "dateCreated": "2026-04-22",
@@ -25,47 +25,61 @@
   "referencePublication": [
     {
       "@type": "ScholarlyArticle",
+      "name": "Automated image classification workflow for phytoplankton monitoring",
+      "author": [
+        { "@type": "Person", "givenName": "Wout",    "familyName": "Decrop" },
+        { "@type": "Person", "givenName": "Rune",    "familyName": "Lagaisse" },
+        { "@type": "Person", "givenName": "Jonas",   "familyName": "Mortelmans" },
+        { "@type": "Person", "givenName": "Cristian","familyName": "Muñiz" },
+        { "@type": "Person", "givenName": "Ignacio", "familyName": "Heredia" },
+        { "@type": "Person", "givenName": "Amanda",  "familyName": "Calatrava" },
+        { "@type": "Person", "givenName": "Klaas",   "familyName": "Deneudt" }
+      ],
+      "isPartOf": { "@type": "Periodical", "name": "Frontiers in Marine Science" },
+      "datePublished": "2025",
+      "identifier": "https://doi.org/10.3389/fmars.2025.1699781"
+    },
+    {
+      "@type": "ScholarlyArticle",
       "name": "Scattering transform applied to the CMB: new approach for component separation",
       "author": [
         { "@type": "Person", "givenName": "Jean-Marc", "familyName": "Delouis" },
         { "@type": "Person", "givenName": "Erwan", "familyName": "Allys" },
         { "@type": "Person", "givenName": "Emmanuel", "familyName": "Gauvrit" },
-        { "@type": "Person", "givenName": "Fran\u00e7ois", "familyName": "Boulanger" }
+        { "@type": "Person", "givenName": "François", "familyName": "Boulanger" }
       ],
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Astronomy & Astrophysics"
-      },
+      "isPartOf": { "@type": "Periodical", "name": "Astronomy & Astrophysics" },
       "datePublished": "2022",
       "identifier": "https://doi.org/10.1051/0004-6361/202244566"
     },
     {
+      "@type": "SoftwareApplication",
+      "name": "Phytoplankton_EfficientNetV2B0 pretrained model",
+      "identifier": "https://doi.org/10.5281/zenodo.15269453",
+      "datePublished": "2025"
+    },
+    {
       "@type": "Dataset",
-      "name": "LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea",
+      "name": "LifeWatch observatory data: phytoplankton annotated training set by FlowCam imaging in the Belgian Part of the North Sea",
       "identifier": "https://doi.org/10.5281/zenodo.10554845",
       "datePublished": "2024"
     }
   ],
   "isPartOf": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "Science Live",
-      "url": "https://platform.sciencelive4all.org"
-    },
-    {
-      "@type": "Project",
-      "name": "FIESTA-OSCARS",
-      "url": "https://oscars-project.eu/projects/fair-image-analysis-across-sciences"
-    }
+    { "@type": "SoftwareApplication", "name": "Science Live", "url": "https://platform.sciencelive4all.org" },
+    { "@type": "Project", "name": "FIESTA-OSCARS", "url": "https://oscars-project.eu/projects/fair-image-analysis-across-sciences" }
   ],
   "keywords": [
     "scattering transform",
+    "stacked ensemble",
     "plankton classification",
     "marine biodiversity",
+    "rare-class recall",
     "FlowCam",
     "bioimaging",
     "FOSCAT",
     "LifeWatch",
+    "FORRT",
     "reproducible research",
     "FAIR"
   ]
