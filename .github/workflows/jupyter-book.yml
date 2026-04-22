@@ -57,6 +57,8 @@ jobs:
           jupyter execute 01_plankton_classification.ipynb || echo "Notebook execution failed (data may not be available)"
 
       - name: Build MyST site
+        env:
+          BASE_URL: /${{ github.event.repository.name }}
         run: myst build --html
 
       - name: Upload pages artifact
