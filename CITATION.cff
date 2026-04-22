@@ -5,7 +5,7 @@ message: >-
   original method paper by Delouis et al. (2022).
 type: software
 doi: "10.5281/zenodo.19687112"
-version: "0.1.1"
+version: "0.2.0"
 authors:
   - given-names: Anne
     family-names: Fouilloux
@@ -13,7 +13,7 @@ authors:
     affiliation: LifeWatch ERIC
 repository-code: "https://github.com/annefou/fiesta-scattering-bio"
 license: MIT
-date-released: "2026-04-14"
+date-released: "2026-04-22"
 references:
   - type: article
     title: >-
