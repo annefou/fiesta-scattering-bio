@@ -64,8 +64,6 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 import json
@@ -324,6 +322,7 @@ fig.suptitle('Plankton Classification with Scattering Transform (FOSCAT)',
              fontsize=14, fontweight='bold')
 fig.tight_layout()
 fig.savefig(RESULTS / 'plankton_classification.png', dpi=150, bbox_inches='tight')
+plt.show()
 print(f"Saved: {RESULTS / 'plankton_classification.png'}")
 
 # %% [markdown]
