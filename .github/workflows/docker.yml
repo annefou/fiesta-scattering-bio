@@ -8,6 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
 
 jobs:
   build-and-push:
@@ -54,9 +55,7 @@ jobs:
           ls -lh docker-image.tar.gz
 
       - name: Upload Docker image to Zenodo
-        if: secrets.ZENODO_TOKEN != ''
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        if: ${{ env.ZENODO_TOKEN != '' }}
         run: |
           set -euo pipefail
 
