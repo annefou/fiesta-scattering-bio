@@ -16,32 +16,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Micromamba
+        uses: mamba-org/setup-micromamba@v3
         with:
-          python-version: "3.11"
+          environment-file: environment.yml
+          environment-name: fiesta-scattering-bio
+          init-shell: bash
+          cache-environment: true
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install torch --index-url https://download.pytorch.org/whl/cpu
-          pip install "foscat @ git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu" scikit-learn numpy matplotlib Pillow healpy scipy jupytext nbclient ipykernel
-
-      - name: Download data subset from Zenodo
+      - name: Download data from Zenodo
         run: |
           pip install zenodo-get
           mkdir -p data
           cd data
           zenodo_get 10554845 --retry 3 || true
-          # Extract only if archive was downloaded
           if ls *.7z 1>/dev/null 2>&1; then
             sudo apt-get install -y p7zip-full
             7z x *.7z -odata_extract || true
             mv data_extract/images_DS . 2>/dev/null || true
           fi
-          # If data not available, the notebook CI_MODE uses N_PER_CLASS=50
-          # and will skip gracefully if classes are missing
 
       - name: Convert and run notebook
+        shell: micromamba-shell {0}
         run: |
           jupytext --to notebook 01_plankton_classification.py
           jupyter execute --inplace 01_plankton_classification.ipynb || echo "Notebook execution failed (data may not be available)"
