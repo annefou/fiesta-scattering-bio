@@ -12,7 +12,8 @@ dependencies:
   - nbclient
   - ipykernel
   - Pillow=11.2
-  - pytorch-cpu=2.11
+  - pytorch
+  - cpuonly
   - pip:
       # CPU-patched fork of FOSCAT (upstream PR: jmdelouis/FOSCAT#40)
       # Use 'foscat' from PyPI instead if running on a CUDA GPU machine
