@@ -1,6 +1,7 @@
 # FIESTA Scattering Bio — scattering transforms complement a plankton CNN
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19687112.svg)](https://doi.org/10.5281/zenodo.19687112)
+[![Source DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19687112.svg)](https://doi.org/10.5281/zenodo.19687112)
+[![Docker image DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19701138.svg)](https://doi.org/10.5281/zenodo.19701138)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 This repository shows that the **Cross Scattering Transform** — originally
@@ -139,6 +140,25 @@ The natural **Galaxy tool factoring** emerges from this landscape:
 - `scattering-stacking` — CNN + scattering meta-classifier (this repo)
 
 All three tools share the same FOSCAT core and are composable across domains.
+
+## Container image
+
+A Docker container for this repository is built on every release, pushed to
+GitHub Container Registry, and archived to Zenodo.
+
+```bash
+docker pull ghcr.io/annefou/fiesta-scattering-bio:latest
+docker run --rm -v "$PWD/results:/app/results" \
+    ghcr.io/annefou/fiesta-scattering-bio:latest
+```
+
+Zenodo-archived image tarballs via the
+[Docker image concept DOI 10.5281/zenodo.19701138](https://doi.org/10.5281/zenodo.19701138).
+
+**Note:** the container runs step 01 (scattering features) by default. Step 02
+(CNN inference) needs a separate TF-based image — reuse
+[fiesta-decrop-reproduction](https://github.com/annefou/fiesta-decrop-reproduction)'s
+container for that.
 
 ## How to cite
 
