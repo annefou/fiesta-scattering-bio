@@ -84,7 +84,7 @@ jobs:
           curl -s -X PUT "${BUCKET_URL}/${FILENAME}" \
             -H "Authorization: Bearer ${ZENODO_TOKEN}" \
             -H "Content-Type: application/octet-stream" \
-            --data-binary @docker-image.tar.gz \
+            -T docker-image.tar.gz \
             --progress-bar | cat
 
           echo "Uploaded ${FILENAME}"
