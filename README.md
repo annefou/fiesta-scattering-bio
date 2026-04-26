@@ -119,6 +119,42 @@ snakemake --cores all
   CPU-compatible fork [annefou/FOSCAT @ v0.1.0-cpu](https://github.com/annefou/FOSCAT)
   (upstream PR [#40](https://github.com/jmdelouis/FOSCAT/pull/40)).
 
+## FORRT nanopublication chain
+
+The full provenance of this work is recorded as a six-step FORRT
+nanopublication chain on the
+[Science Live](https://platform.sciencelive4all.org) platform. Each step is
+independently citable and machine-readable; together they form the FAIR
+provenance receipt for this study.
+
+> **Headline assertion — machine-readable:**
+> [**This work `cito:extends` Decrop et al. 2025, `cito:usesMethodIn` Delouis et al. 2022, AND `cito:citesAsDataSource` `fiesta-decrop-reproduction`**](https://w3id.org/sciencelive/np/RA8BSfq4Cbs3A4chU6fvafk0px-yDZwsYKFIO9cnzkyx4)
+>
+> The CiTO citation nanopublication encodes three relationships at once:
+> this work extends Decrop et al. 2025's CNN classifier with stacking
+> (`cito:extends`); the underlying multi-scale scattering-feature method
+> comes from Delouis et al. 2022 (`cito:usesMethodIn`); and the
+> [`fiesta-decrop-reproduction`](https://github.com/annefou/fiesta-decrop-reproduction)
+> repository is cited as the data source for the CNN val and test
+> softmax probabilities our stacking consumes (`cito:citesAsDataSource`).
+> Discovery tools (Scholia, Wikidata pipelines, SPARQL endpoints) can
+> follow this single citation to find all three relationships.
+
+The five preceding nanopubs build the provenance ladder up to that citation:
+
+| Step | Type | Asserts | Nanopub URI |
+|---|---|---|---|
+| 1 | Quote-with-comment (Annotate a paper quotation) | Verbatim quote of Decrop et al. 2025's acknowledgement of the rare-species class-imbalance limitation, with personal comment framing the extension | [`RAH71…`](https://w3id.org/sciencelive/np/RAH71F0FaKHQ2OZ-k_mGaO0GB501kDHo_ZqY6ScBbtep4) |
+| 2 | AIDA sentence *(Nanodash namespace)* | Atomic, declarative restatement: stacking scattering features on a CNN's softmax probabilities lifts mean rare-class recall by 8.4 percentage points at 0.72-percentage-point top-1 cost. *(Published via Nanodash because of the Science Live AIDA-form bug with combined datasets+publications fields.)* | [`RAT-P…`](https://w3id.org/np/RAT-PGqwhe4Y2hALiOhgEm4ErYVK9vfk0YbQpV2qdN1Ck) |
+| 3 | FORRT Claim (model performance) | The stacking-improvement claim, typed as a FORRT model-performance claim | [`RAeI2…`](https://w3id.org/sciencelive/np/RAeI2cspabQBUMHiA94jOKjiBypsIFSPPDwH_f5l1sJu4) |
+| 4 | FORRT Replication Study | Replication with different methodology — CNN + scattering meta-features + class-weighted LR stacking, on Decrop's exact `val.txt` and `test.txt` splits | [`RAauQ…`](https://w3id.org/sciencelive/np/RAauQR3eY4NGILF2ei5a6YLbZjT7JDK_tQGYyl2R4DcMk) |
+| 5 | FORRT Replication Outcome (Validated, High) | Stacked LR top-1 85.62%, top-5 95.39%, mean rare-class recall 56.08% — vs CNN alone 86.34% / 98.70% / 47.70%; 33 of 95 classes improve, 16 worsen | [`RAIqy…`](https://w3id.org/sciencelive/np/RAIqyPwP8PzMKSKCMKb04vzR1CpttIsAYqIRy6RkaBPZk) |
+| 6 | **CiTO citation — `cito:extends` Decrop 2025 + `cito:usesMethodIn` Delouis 2022 + `cito:citesAsDataSource` `fiesta-decrop-reproduction`** | The headline triple assertion above | [**`RA8BS…`**](https://w3id.org/sciencelive/np/RA8BSfq4Cbs3A4chU6fvafk0px-yDZwsYKFIO9cnzkyx4) |
+
+The chain runs: paper → quote → atomic claim → FORRT claim → study (this
+repo) → outcome (the metrics in the Headline numbers table) → CiTO
+citations to the three relationships above.
+
 ## FIESTA-OSCARS cross-domain context
 
 This repository is part of a four-domain demonstration of scattering
