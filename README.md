@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/annefou/fiesta-scattering-bio/actions/workflows/ci.yml/badge.svg)](https://github.com/annefou/fiesta-scattering-bio/actions/workflows/ci.yml)
 [![Jupyter Book](https://github.com/annefou/fiesta-scattering-bio/actions/workflows/jupyter-book.yml/badge.svg)](https://annefou.github.io/fiesta-scattering-bio/)
-[![Docker](https://github.com/annefou/fiesta-scattering-bio/actions/workflows/docker.yml/badge.svg)](https://github.com/annefou/fiesta-scattering-bio/pkgs/container/fiesta-scattering-bio)
+[![Docker](https://github.com/annefou/fiesta-scattering-bio/actions/workflows/docker.yml/badge.svg?event=release)](https://github.com/annefou/fiesta-scattering-bio/pkgs/container/fiesta-scattering-bio)
 [![Source DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19687112.svg)](https://doi.org/10.5281/zenodo.19687112)
 [![Docker image DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19701138.svg)](https://doi.org/10.5281/zenodo.19701138)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
