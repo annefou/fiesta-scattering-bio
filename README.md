@@ -242,6 +242,19 @@ LifeWatch dataset, pretrained model).
 - **CNN baseline and dataset** — Decrop et al. 2025 ([Frontiers in Marine Science](https://doi.org/10.3389/fmars.2025.1699781)), LifeWatch Belgium / VLIZ.
 - **This work** — Anne Fouilloux, LifeWatch ERIC (FIESTA-OSCARS).
 
+## Funding & acknowledgements
+
+This repository is part of the **FIESTA** project (*FAIR image analysis across
+sciences*), funded under [OSCARS](https://oscars-project.eu/projects/fair-image-analysis-across-sciences)
+through its cascading grant mechanism.
+
+> The authors acknowledge the OSCARS project, which has received funding from the
+> European Commission's Horizon Europe Research and Innovation programme under
+> grant agreement No. 101129751.
+
+<p><img src="docs/images/funded-by-oscars-eu.png"
+        alt="OSCARS — Funded by the European Union" height="60"></p>
+
 ## License
 
 Code MIT. Data and pretrained model CC-BY 4.0 — cite Decrop et al. 2025 and

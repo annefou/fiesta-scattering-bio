@@ -95,7 +95,7 @@ jobs:
             "metadata": {
               "title": "${REPO_NAME} ${TAG} — Docker container image",
               "upload_type": "software",
-              "description": "Docker container image for <a href='${REPO_URL}'>${REPO_NAME}</a> ${TAG}. Built from the Dockerfile in the repository. Load with: <code>docker load < ${FILENAME}</code>",
+              "description": "Docker container image for <a href='${REPO_URL}'>${REPO_NAME}</a> ${TAG}. Built from the Dockerfile in the repository. Load with: <code>docker load < ${FILENAME}</code> Funded by the OSCARS project — European Commission, Horizon Europe Research and Innovation programme, grant agreement No. 101129751.",
               "creators": [
                 {
                   "name": "Fouilloux, Anne",
@@ -120,7 +120,8 @@ jobs:
                   "scheme": "url"
                 }
               ],
-              "version": "${TAG}"
+              "version": "${TAG}",
+              "grants": [{"id": "10.13039/501100000780::101129751"}]
             }
           }
           METAEOF
