@@ -1,132 +1,368 @@
 {
-  "@context": "https://w3id.org/ro/crate/1.2/context",
-  "@graph": [
-    {
-      "@type": "CreativeWork",
-      "@id": "ro-crate-metadata.json",
-      "conformsTo": [
-        { "@id": "https://w3id.org/ro/crate/1.2" },
-        { "@id": "https://w3id.org/ro/wfrun/process/0.5" },
-        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
-      ],
-      "about": { "@id": "./" }
-    },
-    {
-      "@id": "./",
-      "@type": ["Dataset", "ResearchObject"],
-      "name": "FIESTA Scattering Bio — scattering transforms complement a plankton CNN",
-      "description": "Stacks multi-scale Cross Scattering Transform features (Delouis et al. 2022, originally for astrophysics) on top of Decrop et al. 2025's EfficientNetV2-B0 phytoplankton CNN baseline via a class-weighted logistic-regression meta-classifier. Headline result: +8.4 percentage points rare-class mean recall at −0.72 percentage points overall top-1 cost (Decrop's exact val/test splits, 95 classes).",
-      "license": { "@id": "https://spdx.org/licenses/MIT" },
-      "publisher": { "@id": "https://orcid.org/0000-0002-1784-2920" },
-      "author": [{ "@id": "https://orcid.org/0000-0002-1784-2920" }],
-      "mainEntity": { "@id": "Snakefile" },
-      "identifier": "https://doi.org/10.5281/zenodo.19687112",
-      "citation": [
-        { "@id": "https://doi.org/10.3389/fmars.2025.1699781" },
-        { "@id": "https://doi.org/10.1051/0004-6361/202244566" },
-        { "@id": "https://doi.org/10.5281/zenodo.15269453" },
-        { "@id": "https://w3id.org/sciencelive/np/RAIqyPwP8PzMKSKCMKb04vzR1CpttIsAYqIRy6RkaBPZk" }
-      ],
-      "hasPart": [
-        { "@id": "Snakefile" },
-        { "@id": "environment.yml" },
-        { "@id": "Dockerfile" },
-        { "@id": "01_scattering_features.py" },
-        { "@id": "02_cnn_predictions.py" },
-        { "@id": "03_stacking.py" },
-        { "@id": "04_results_summary.py" },
-        { "@id": "CITATION.cff" },
-        { "@id": "codemeta.json" }
-      ]
-    },
-    {
-      "@id": "https://orcid.org/0000-0002-1784-2920",
-      "@type": "Person",
-      "name": "Anne Fouilloux",
-      "affiliation": "LifeWatch ERIC"
-    },
-    {
-      "@id": "Snakefile",
-      "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-      "name": "Replication pipeline",
-      "description": "Snakemake workflow chaining scattering-feature extraction (step 01), CNN softmax inference (step 02), stacked meta-classifier training and evaluation (step 03), and results summarisation (step 04).",
-      "programmingLanguage": { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake" }
-    },
-    {
-      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake",
-      "@type": "ComputerLanguage",
-      "name": "Snakemake",
-      "url": "https://snakemake.readthedocs.io/"
-    },
-    {
-      "@id": "01_scattering_features.py",
-      "@type": ["File", "SoftwareSourceCode", "Notebook"],
-      "name": "Step 01 — Multi-scale scattering feature extraction",
-      "programmingLanguage": "Python"
-    },
-    {
-      "@id": "02_cnn_predictions.py",
-      "@type": ["File", "SoftwareSourceCode", "Notebook"],
-      "name": "Step 02 — CNN softmax predictions on val + test splits",
-      "programmingLanguage": "Python"
-    },
-    {
-      "@id": "03_stacking.py",
-      "@type": ["File", "SoftwareSourceCode", "Notebook"],
-      "name": "Step 03 — Class-weighted stacked meta-classifier",
-      "programmingLanguage": "Python"
-    },
-    {
-      "@id": "04_results_summary.py",
-      "@type": ["File", "SoftwareSourceCode", "Notebook"],
-      "name": "Step 04 — Results summary + figures",
-      "programmingLanguage": "Python"
-    },
-    {
-      "@id": "environment.yml",
-      "@type": ["File", "ConfigurationFile"],
-      "name": "Conda environment specification",
-      "encodingFormat": "application/yaml"
-    },
-    {
-      "@id": "Dockerfile",
-      "@type": ["File", "ConfigurationFile"],
-      "name": "Container build specification",
-      "encodingFormat": "text/x-dockerfile"
-    },
-    {
-      "@id": "CITATION.cff",
-      "@type": ["File"],
-      "name": "Citation File Format metadata",
-      "encodingFormat": "application/yaml"
-    },
-    {
-      "@id": "codemeta.json",
-      "@type": ["File"],
-      "name": "CodeMeta-2.0 software metadata",
-      "encodingFormat": "application/ld+json"
-    },
-    {
-      "@id": "https://doi.org/10.3389/fmars.2025.1699781",
-      "@type": "ScholarlyArticle",
-      "name": "Automated image classification workflow for phytoplankton monitoring (Decrop et al. 2025)",
-      "datePublished": "2025"
-    },
-    {
-      "@id": "https://doi.org/10.1051/0004-6361/202244566",
-      "@type": "ScholarlyArticle",
-      "name": "Non-parametric component separation with scattering transforms (Delouis et al. 2022)",
-      "datePublished": "2022"
-    },
-    {
-      "@id": "https://doi.org/10.5281/zenodo.15269453",
-      "@type": "Dataset",
-      "name": "Decrop 2025 — pretrained EfficientNetV2-B0 model + test split"
-    },
-    {
-      "@id": "https://w3id.org/sciencelive/np/RAIqyPwP8PzMKSKCMKb04vzR1CpttIsAYqIRy6RkaBPZk",
-      "@type": "CreativeWork",
-      "name": "FORRT Replication Outcome — Validated, High confidence"
-    }
-  ]
+    "@context": "https://w3id.org/ro/crate/1.2/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "author": {
+                "@id": "https://orcid.org/0000-0002-1784-2920"
+            },
+            "citation": [
+                {
+                    "@id": "https://doi.org/10.3389/fmars.2025.1699781"
+                },
+                {
+                    "@id": "https://doi.org/10.1051/0004-6361/202244566"
+                }
+            ],
+            "codeRepository": "https://github.com/annefou/fiesta-scattering-bio",
+            "conformsTo": [
+                {
+                    "@id": "https://w3id.org/np/RAiEW_g7wsXXMJINFJ3Qx7h2avPu1rx4yp1SE7Mw8jFkU"
+                }
+            ],
+            "datePublished": "2026-04-22",
+            "description": "Demonstrates that deterministic Cross Scattering Transform features (FOSCAT, NORIENT=8, RGB, 246-dim) carry information complementary to a fine-tuned ImageNet CNN on plankton classification. Runs on Decrop et al. 2025's open FlowCam dataset and held-out splits. A stacked logistic regression meta-classifier, trained on val.txt and evaluated on test.txt, improves per-class recall on 33 of 95 plankton taxa and lifts rare-class mean recall from 47.7% to 56.1% (+8.4 pp) at a cost of 0.72 pp in overall top-1 accuracy. Part of the FIESTA-OSCARS cross-domain scattering transforms demonstration.",
+            "funder": {
+                "@id": "https://ror.org/00k4n6c32"
+            },
+            "funding": {
+                "@id": "https://cordis.europa.eu/project/id/101129751"
+            },
+            "hasPart": [
+                {
+                    "@id": "Snakefile"
+                },
+                {
+                    "@id": "01_scattering_features.py"
+                },
+                {
+                    "@id": "02_cnn_predictions.py"
+                },
+                {
+                    "@id": "03_stacking.py"
+                },
+                {
+                    "@id": "04_results_summary.py"
+                },
+                {
+                    "@id": "environment-cnn.yml"
+                },
+                {
+                    "@id": "environment.yml"
+                },
+                {
+                    "@id": "Dockerfile"
+                },
+                {
+                    "@id": "results/stacking_val_trained_results.json"
+                },
+                {
+                    "@id": "https://doi.org/10.5281/zenodo.10554845"
+                },
+                {
+                    "@id": "https://doi.org/10.5281/zenodo.15269453"
+                },
+                {
+                    "@id": "https://doi.org/10.5281/zenodo.19687112"
+                }
+            ],
+            "identifier": {
+                "@id": "#version-doi"
+            },
+            "keywords": [
+                "scattering transform",
+                "plankton classification",
+                "stacked ensemble",
+                "FORRT",
+                "marine biodiversity",
+                "FlowCam",
+                "FOSCAT",
+                "reproducible research",
+                "FAIR"
+            ],
+            "license": {
+                "@id": "https://spdx.org/licenses/MIT"
+            },
+            "mainEntity": {
+                "@id": "Snakefile"
+            },
+            "name": "FIESTA Scattering Bio — scattering transforms complement a plankton CNN",
+            "publisher": {
+                "@id": "https://ror.org/02a8eka68"
+            },
+            "sameAs": {
+                "@id": "https://doi.org/10.5281/zenodo.19687112"
+            },
+            "subjectOf": [
+                {
+                    "@id": "https://w3id.org/sciencelive/np/RAH71F0FaKHQ2OZ-k_mGaO0GB501kDHo_ZqY6ScBbtep4"
+                },
+                {
+                    "@id": "https://w3id.org/np/RAT-PGqwhe4Y2hALiOhgEm4ErYVK9vfk0YbQpV2qdN1Ck"
+                },
+                {
+                    "@id": "https://w3id.org/sciencelive/np/RAeI2cspabQBUMHiA94jOKjiBypsIFSPPDwH_f5l1sJu4"
+                },
+                {
+                    "@id": "https://w3id.org/sciencelive/np/RAauQR3eY4NGILF2ei5a6YLbZjT7JDK_tQGYyl2R4DcMk"
+                },
+                {
+                    "@id": "https://w3id.org/sciencelive/np/RAIqyPwP8PzMKSKCMKb04vzR1CpttIsAYqIRy6RkaBPZk"
+                },
+                {
+                    "@id": "https://w3id.org/sciencelive/np/RA8BSfq4Cbs3A4chU6fvafk0px-yDZwsYKFIO9cnzkyx4"
+                }
+            ],
+            "version": "0.3.0"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.2"
+            }
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake",
+            "@type": "ComputerLanguage",
+            "name": "Snakemake",
+            "url": {
+                "@id": "https://snakemake.readthedocs.io/"
+            },
+            "version": "not pinned"
+        },
+        {
+            "@id": "Snakefile",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "contentSize": "1272",
+            "description": "Replication pipeline (Snakemake): download, clean, analyse, figures.",
+            "encodingFormat": "text/x-snakemake",
+            "name": "Snakefile",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake"
+            }
+        },
+        {
+            "@id": "01_scattering_features.py",
+            "@type": "File",
+            "contentSize": "7995",
+            "description": "Script 01_scattering_features",
+            "encodingFormat": "text/x-python",
+            "name": "01_scattering_features.py"
+        },
+        {
+            "@id": "02_cnn_predictions.py",
+            "@type": "File",
+            "contentSize": "6122",
+            "description": "Script 02_cnn_predictions",
+            "encodingFormat": "text/x-python",
+            "name": "02_cnn_predictions.py"
+        },
+        {
+            "@id": "03_stacking.py",
+            "@type": "File",
+            "contentSize": "8596",
+            "description": "Script 03_stacking",
+            "encodingFormat": "text/x-python",
+            "name": "03_stacking.py"
+        },
+        {
+            "@id": "04_results_summary.py",
+            "@type": "File",
+            "contentSize": "6335",
+            "description": "Script 04_results_summary",
+            "encodingFormat": "text/x-python",
+            "name": "04_results_summary.py"
+        },
+        {
+            "@id": "environment-cnn.yml",
+            "@type": "File",
+            "contentSize": "885",
+            "description": "Conda environment",
+            "encodingFormat": "text/plain",
+            "name": "environment-cnn.yml"
+        },
+        {
+            "@id": "environment.yml",
+            "@type": "File",
+            "contentSize": "497",
+            "description": "Conda environment",
+            "encodingFormat": "text/plain",
+            "name": "environment.yml"
+        },
+        {
+            "@id": "Dockerfile",
+            "@type": "File",
+            "contentSize": "1120",
+            "description": "Container build specification",
+            "encodingFormat": "text/plain",
+            "name": "Dockerfile"
+        },
+        {
+            "@id": "results/stacking_val_trained_results.json",
+            "@type": "File",
+            "contentSize": "15908",
+            "description": "Result stacking_val_trained_results",
+            "encodingFormat": "application/json",
+            "name": "results/stacking_val_trained_results.json"
+        },
+        {
+            "@id": "https://doi.org/10.5281/zenodo.10554845",
+            "@type": "File",
+            "description": "LifeWatch observatory data: phytoplankton annotated training set by FlowCam imaging",
+            "encodingFormat": "text/html",
+            "license": {
+                "@id": "https://creativecommons.org/licenses/by/4.0/"
+            },
+            "name": "LifeWatch observatory data: phytoplankton annotated training set by FlowCam imaging",
+            "sdDatePublished": "2026-10-24"
+        },
+        {
+            "@id": "https://doi.org/10.5281/zenodo.15269453",
+            "@type": "File",
+            "description": "Pre-trained phytoplankton species classifier model (Decrop et al.)",
+            "encodingFormat": "text/html",
+            "license": {
+                "@id": "https://creativecommons.org/licenses/by/4.0/"
+            },
+            "name": "Pre-trained phytoplankton species classifier model (Decrop et al.)",
+            "sdDatePublished": "2026-10-24"
+        },
+        {
+            "@id": "https://ror.org/02a8eka68",
+            "@type": "Organization",
+            "name": "LifeWatch ERIC",
+            "url": "https://www.lifewatch.eu/"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-1784-2920",
+            "@type": "Person",
+            "affiliation": {
+                "@id": "https://ror.org/02a8eka68"
+            },
+            "name": "Anne Fouilloux"
+        },
+        {
+            "@id": "https://ror.org/00k4n6c32",
+            "@type": "Organization",
+            "name": "European Commission",
+            "url": "https://commission.europa.eu/"
+        },
+        {
+            "@id": "https://cordis.europa.eu/project/id/101129751",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/00k4n6c32"
+            },
+            "identifier": "101129751",
+            "name": "OSCARS: Open Science Clusters' Action for Research and Society"
+        },
+        {
+            "@id": "https://spdx.org/licenses/MIT",
+            "@type": "CreativeWork",
+            "description": "MIT licence for the code.",
+            "name": "MIT License"
+        },
+        {
+            "@id": "https://w3id.org/np/RAiEW_g7wsXXMJINFJ3Qx7h2avPu1rx4yp1SE7Mw8jFkU",
+            "@type": [
+                "CreativeWork",
+                "Profile"
+            ],
+            "description": "The FAIR Enabling Resources the bioimaging community of OSCARS-FIESTA agreed to use.",
+            "name": "FAIR Implementation Profile: Bioimaging (OSCARS-FIESTA)"
+        },
+        {
+            "@id": "#version-doi",
+            "@type": "PropertyValue",
+            "name": "Version DOI",
+            "propertyID": "https://registry.identifiers.org/registry/doi",
+            "url": "https://doi.org/10.5281/zenodo.19687112",
+            "value": "10.5281/zenodo.19687112"
+        },
+        {
+            "@id": "https://doi.org/10.5281/zenodo.19687112",
+            "@type": "CreativeWork",
+            "description": "Archived release: full source tree, results and figures.",
+            "license": {
+                "@id": "https://spdx.org/licenses/MIT"
+            },
+            "name": "Release v0.3.0 (Zenodo version DOI)"
+        },
+        {
+            "@id": "https://w3id.org/sciencelive/np/RAH71F0FaKHQ2OZ-k_mGaO0GB501kDHo_ZqY6ScBbtep4",
+            "@type": "CreativeWork",
+            "additionalType": "Nanopublication",
+            "encodingFormat": "application/trig",
+            "name": "Quote-with-comment (FORRT chain step 01)"
+        },
+        {
+            "@id": "https://w3id.org/np/RAT-PGqwhe4Y2hALiOhgEm4ErYVK9vfk0YbQpV2qdN1Ck",
+            "@type": "CreativeWork",
+            "additionalType": "Nanopublication",
+            "encodingFormat": "application/trig",
+            "name": "AIDA Sentence (FORRT chain step 02)"
+        },
+        {
+            "@id": "https://w3id.org/sciencelive/np/RAeI2cspabQBUMHiA94jOKjiBypsIFSPPDwH_f5l1sJu4",
+            "@type": "CreativeWork",
+            "additionalType": "Nanopublication",
+            "encodingFormat": "application/trig",
+            "name": "FORRT Claim (FORRT chain step 03)"
+        },
+        {
+            "@id": "https://w3id.org/sciencelive/np/RAauQR3eY4NGILF2ei5a6YLbZjT7JDK_tQGYyl2R4DcMk",
+            "@type": "CreativeWork",
+            "additionalType": "Nanopublication",
+            "encodingFormat": "application/trig",
+            "name": "FORRT Replication Study (FORRT chain step 04)"
+        },
+        {
+            "@id": "https://w3id.org/sciencelive/np/RAIqyPwP8PzMKSKCMKb04vzR1CpttIsAYqIRy6RkaBPZk",
+            "@type": "CreativeWork",
+            "additionalType": "Nanopublication",
+            "encodingFormat": "application/trig",
+            "name": "FORRT Replication Outcome (FORRT chain step 05)"
+        },
+        {
+            "@id": "https://w3id.org/sciencelive/np/RA8BSfq4Cbs3A4chU6fvafk0px-yDZwsYKFIO9cnzkyx4",
+            "@type": "CreativeWork",
+            "additionalType": "Nanopublication",
+            "encodingFormat": "application/trig",
+            "name": "CiTO Citation (FORRT chain step 06)"
+        },
+        {
+            "@id": "https://doi.org/10.3389/fmars.2025.1699781",
+            "@type": "ScholarlyArticle",
+            "name": "Decrop et al. 2025, automated image classification workflow for phytoplankton monitoring"
+        },
+        {
+            "@id": "https://doi.org/10.1051/0004-6361/202244566",
+            "@type": "ScholarlyArticle",
+            "name": "Delouis et al. 2022, scattering transforms (A&A)"
+        },
+        {
+            "@id": "https://w3id.org/ro/crate/1.2",
+            "@type": "CreativeWork",
+            "name": "https://w3id.org/ro/crate/1.2"
+        },
+        {
+            "@id": "https://snakemake.readthedocs.io/",
+            "@type": "CreativeWork",
+            "name": "Snakemake documentation"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/",
+            "@type": "CreativeWork",
+            "name": "Creative Commons Attribution 4.0 International"
+        }
+    ]
 }
